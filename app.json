@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "reddit_i4sea",
+    "slug": "reddit_i4sea",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
