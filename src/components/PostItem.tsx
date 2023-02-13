@@ -1,10 +1,9 @@
-import { Dimensions, Image, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableOpacityProps, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, TouchableOpacityProps, View } from "react-native";
 import { MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
 import fonts from "../styles/fonts";
 
-interface PostItemProps extends TouchableOpacityProps {
-  post: {
-    id:string,
+export interface Post {
+  id:string,
     author: string,
     title:string,
     created:number,
@@ -15,7 +14,9 @@ interface PostItemProps extends TouchableOpacityProps {
     num_comments: number,
     permalink:string,
     url: string,
-  }
+}
+interface PostItemProps extends TouchableOpacityProps {
+  post: Post
 } 
 
 export const PostItem = ({post, ...rest}:PostItemProps) => {
@@ -65,8 +66,6 @@ export const PostItem = ({post, ...rest}:PostItemProps) => {
       style={{
         height: 512,
         width: '100%',
-        // maxHeight: 512,
-        // maxWidth: '100%',
         resizeMode: 'cover'
       }}
     />
@@ -96,8 +95,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     width: width,
     paddingTop:8,
-    // backgroundColor: 'red',
-    // flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderWidth: 1,
@@ -105,7 +102,6 @@ const styles = StyleSheet.create({
     
   },
   titleArea: {
-    // backgroundColor: 'green',
     width:'100%',
     marginVertical:10,
     paddingHorizontal:8,
@@ -122,11 +118,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     width:'100%',
-    // height:100,
     paddingHorizontal: 10,
     alignItems: 'flex-start',
-    // justifyContent: 'center',
-    // backgroundColor: 'green',
   },
   createdAt: {
     alignSelf: 'flex-end'
@@ -136,14 +129,12 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row',
-    // backgroundColor: 'blue',
   },
   author: {
     fontFamily: fonts.semibold,
     color: '#878787'
   },
   scoreArea: {
-    // backgroundColor: 'red',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
@@ -155,7 +146,6 @@ const styles = StyleSheet.create({
   },
   commentsArea: {
     marginTop:3,
-    // backgroundColor: 'red',
     paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'center',
