@@ -2,6 +2,11 @@
   <img alt="reddit" title="reddit" src=".github/logo.png" height="200px"/>
 </h1>
 
+<p align="center">
+  <img alt="Device" src="https://user-images.githubusercontent.com/51445448/218592792-803efdad-2be1-4ac4-9c28-694aab6f9538.gif" width="250">
+  <img alt="Device" src=".github/image.png" width="250">
+</p>
+
 ## Objetivo
 
 Este aplicativo foi desenvolvido para o teste técnico de uma oportunidade de trabalho na i4sea.
