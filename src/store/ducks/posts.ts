@@ -1,11 +1,16 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-const INITIAL_STATE: any[] | (() => any[]) = [];
+const initialState:any[] = [];
 
-export const addPost = createAction('ADD_POST');
-export const addPosts = createAction('ADD_POSTS');
-
-export default createReducer(INITIAL_STATE, {
-	[addPost.type]: (state, action) => [ ...state, action.payload ],
-	[addPosts.type]: (state, action) => [ ...action.payload ]
+const postSlice = createSlice({
+  name: 'posts',
+  initialState,
+  reducers: {
+    addPost: (state, action) => [...state, action.payload],
+    addPosts: (state, action) => [...action.payload]
+  }
 });
+
+export const { addPost, addPosts } = postSlice.actions;
+
+export default postSlice.reducer;
